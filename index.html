@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&H Abogados Asociados | Especialistas en Litigio, Civil y Mercantil</title>
+    <style>
+        :root {
+            --bg-principal: #0a0f14;       
+            --bg-secundario: #121a22;      
+            --bg-transparente: rgba(18, 26, 34, 0.85); 
+            --texto-claro: #f4f6f8;        
+            --texto-mutado: #a0aec0;       
+            --dorado-acento: #c5a880;      
+            --verde-whatsapp: #25d366;     
+            --borde-sutil: #1e293b;        
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Times New Roman', Times, serif; 
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-claro);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--texto-claro);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            color: var(--texto-mutado);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .header-principal {
+            background-color: var(--bg-secundario);
+            border-bottom: 2px solid var(--dorado-acento);
+            padding: 10px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-personalizado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            background: transparent;
+        }
+
+        .logo-letras {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 34px;
+            font-weight: normal;
+            color: var(--texto-claro);
+            line-height: 1;
+            letter-spacing: -2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo-letras span {
+            font-size: 26px;
+            position: relative;
+            top: -2px;
+            margin: 0 -1px;
+            color: var(--texto-claro);
+        }
+
+        .logo-subtexto {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--texto-claro);
+            margin-top: 2px;
+            text-align: center;
+            border-top: 1px solid rgba(244, 246, 248, 0.2);
+            padding-top: 2px;
+            width: 100%;
+        }
+
+        .nav-box a {
+            color: var(--texto-claro);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            font-weight: bold;
+        }
+
+        .nav-box a:hover {
+            color: var(--dorado-acento);
+        }
+
+        .seccion-hero {
+            position: relative;
+            padding: 120px 20px;
+            text-align: center;
+            background-image: linear-gradient(rgba(10, 15, 20, 0.75), rgba(10, 15, 20, 0.85)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            border-bottom: 1px solid var(--borde-sutil);
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background-color: var(--bg-transparente);
+            padding: 50px 40px;
+            border-radius: 8px;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-container h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-container p {
+            font-size: 18px;
+            margin-bottom: 35px;
+            color: #cbd5e1;
+        }
+
+        .btn-principal {
+            display: inline-block;
+            background-color: var(--dorado-acento);
+            color: #05070a;
+            padding: 14px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(197, 168, 128, 0.3);
+        }
+
+        .btn-principal:hover {
+            background-color: #e2c59b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(197, 168, 128, 0.5);
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--verde-whatsapp);
+            color: #fff;
+            padding: 14px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba59;
+        }
+
+        .seccion-servicios {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--dorado-acento);
+        }
+
+        .subtitulo-seccion {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 60px;
+            font-style: italic;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .tarjeta-servicio {
+            background-color: var(--bg-secundario);
+            border: 1px solid var(--borde-sutil);
+            border-top: 4px solid var(--dorado-acento);
+            padding: 35px;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta-servicio:hover {
+            transform: translateY(-5px);
+        }
+
+        .tarjeta-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--borde-sutil);
+            padding-bottom: 15px;
+        }
+
+        .tarjeta-header h3 {
+            font-size: 22px;
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            fill: var(--dorado-acento);
+        }
+
+        .tarjeta-servicio ul li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 14px;
+            color: var(--texto-mutado);
+            font-size: 15px;
+        }
+
+        .tarjeta-servicio ul li::before {
+            content: "•";
+            color: var(--dorado-acento);
+            font-weight: bold;
+            font-size: 20px;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        .seccion-remota {
+            background-color: var(--bg-secundario);
+            border-top: 1px solid var(--borde-sutil);
+            border-bottom: 1px solid var(--borde-sutil);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .remota-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .seccion-remota h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--dorado-acento);
+        }
+
+        .seccion-contacto {
+            padding: 90px 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .formulario-contacto {
+            background-color: var(--bg-secundario);
+            padding: 45px;
+            border-radius: 6px;
+            border: 1px solid var(--borde-sutil);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            margin-top: 30px;
+        }
+
+        .grupo-campo {
+            margin-bottom: 22px;
+        }
+
+        .grupo-campo label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--texto-claro);
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .grupo-campo input, .grupo-campo select, .grupo-campo textarea {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: var(--bg-principal);
+            border: 1px solid var(--borde-sutil);
+            color: var(--texto-claro);
+            font-family: inherit;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        .grupo-campo input:focus, .grupo-campo select:focus, .grupo-campo textarea:focus {
+            outline: none;
+            border-color: var(--dorado-acento);
+        }
+
+        .btn-enviar {
+            width: 100%;
+            background-color: var(--dorado-acento);
+            color: #05070a;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 15px;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .footer-principal {
+            background-color: #060a0e;
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid var(--borde-sutil);
+            font-size: 14px;
+            color: var(--texto-mutado);
+        }
+
+        .footer-info {
+            margin-top: 15px;
+            font-size: 13px;
+            color: var(--dorado-acento);
+        }
+
+        .footer-info a {
+            color: var(--texto-claro);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-box a {
+                margin: 0 10px;
+            }
+            .hero-container h2 {
+                font-size: 28px;
+            }
+            .servicios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="header-container">
+            <div class="logo-personalizado">
+                <div class="logo-letras">H<span>&</span>H</div>
+                <div class="logo-subtexto">Abogados</div>
+            </div>
+            
+            <nav class="nav-box">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Especialidades</a>
+                <a href="#gestion-remota">Gestión Remota</a>
+                <a href="#contacto">Consultas</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="seccion-hero">
+            <div class="hero-container">
+                <h2>Defensa Jurídica, Litigio Avanzado y Soluciones Procesales</h2>
+                <p>Protegemos tus derechos, patrimonio y empresa mediante estrategias litigiosas de alto nivel. Asesoría de absoluta confianza y tramitación 100% remota desde nuestra sede principal.</p>
+                <a href="#contacto" class="btn-principal">Agendar Consulta Virtual</a>
+            </div>
+        </section>
+
+        <section id="servicios" class="seccion-servicios">
+            <h2 class="titulo-seccion">Áreas de Especialización</h2>
+            <p class="subtitulo-seccion">Abogacía con rigor técnico, enfoque procesal y alto nivel estratégico.</p>
+
+            <div class="servicios-grid">
+                <article class="tarjeta-servicio">
+                    <div class="tarjeta-header">
+                        <svg class="card-icon" viewBox="0 0 24 24">
+                            <path d="M5.5 19c0-.83.67-1.5 1.5-1.5h10c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5H7c-.83 0-1.5-.67-1.5-1.5m10.5-6V9h-1V5h1c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1H9c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h1v4H9v4c0 .55.45 1 1 1h1v4.5c0 .28.22.5.5.5h1c.28 0 .5-.22.5-.5V14h1c.55 0 1-.45 1-1z"/>
+                        </svg>
+                        <h3>Derecho Procesal y Litigio</h3>
+                    </div>
+                    <ul>
+                        <li>Defensa y representación judicial estratégica ante juzgados y tribunales civiles o mercantiles.</li>
+                        <li>Evaluación, auditoría y dictamen técnico sobre viabilidad y riesgo procesal.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <div class="tarjeta-header">
+                        <svg class="card-icon" viewBox="0 0 24 24">
+                            <path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/>
+                        </svg>
+                        <h3>Derecho Mercantil</h3>
+                    </div>
+                    <ul>
+                        <li>Resolución de conflictos corporativos entre socios e impugnación de acuerdos.</li>
+                        <li>Cobro judicial de facturas, pagarés y recuperación efectiva de cartera.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <div class="tarjeta-header">
+                        <svg class="card-icon" viewBox="0 0 24 24">
+                            <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm1 11h-2v-2h2v2zm0-4h-2V8h2v2z"/>
+                        </svg>
+                        <h3>Derecho Civil y Patrimonial</h3>
+                    </div>
+                    <ul>
+                        <li>Demandas por incumplimiento de contratos e inmuebles.</li>
+                        <li>Acciones de defensa de la propiedad y desalojos.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-servicio">
+                    <div class="tarjeta-header">
+                        <svg class="card-icon" viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 1.34 5 3s1.34 3 8 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                        <h3>Familia y Sucesiones</h3>
+                    </div>
+                    <ul>
+                        <li><strong>Autorizaciones de Viaje:</strong> Gestión de permisos de viaje para menores (ideal a la distancia).</li>
+                        <li><strong>Sucesiones y Familia:</strong> Declaraciones de herederos, divorcios y regímenes de convivencia.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="gestion-remota" class="seccion-remota">
+            <div class="remota-container">
+                <h2>¿Te encuentras lejos o fuera de Venezuela?</h2>
+                <p>Gestionamos tu caso desde Puerto Ordaz y te representamos ante los tribunales locales sin que tengas que viajar. Coordinamos de forma 100% remota.</p>
+                <a href="https://wa.me/584249124547" target="_blank" class="btn-whatsapp">Contactar Urgente por WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="contacto" class="seccion-contacto">
+            <h2 class="titulo-seccion" style="font-size: 28px;">Iniciar Consulta Legal</h2>
+            <form class="formulario-contacto" action="mailto:vanessahamilton8686@gmail.com" method="post" enctype="text/plain">
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="caso">Resumen del Caso:</label>
+                    <textarea id="caso" name="caso" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar Caso a Revisión</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <p>&copy; 2026 H&H Abogados Asociados. Todos los derechos reservados.</p>
+        <div class="footer-info">
+            Directo: <a href="https://wa.me/584249124547">+58 424-9124547</a> | Correo: <a href="mailto:vanessahamilton8686@gmail.com">vanessahamilton8686@gmail.com</a><br>
+            Ubicación: Puerto Ordaz, Estado Bolívar, Venezuela
+        </div>
+    </footer>
+
+</body>
+</html>
